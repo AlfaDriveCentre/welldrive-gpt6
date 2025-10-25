@@ -2,6 +2,4 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body { @apply bg-white text-black; }
-.fade-in { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-.fade-in.show { opacity: 1; transform: translateY(0); }
+html, body { background:#ffffff; color:#000000; }
