@@ -1,0 +1,92 @@
+---
+import Base from "../layouts/Base.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { tr } from "../i18n/tr";
+const t = tr;
+---
+<Base title={"WellDrive – " + t.hero.headline} description={t.hero.p1}>
+  <Navbar />
+
+  <!-- Search overlay -->
+  <div id="searchOverlay" class="hidden fixed inset-0 z-30 bg-black/40 backdrop-blur-sm">
+    <div class="mx-auto max-w-5xl px-4 mt-28">
+      <div class="bg-white rounded-2xl shadow p-4">
+        <input type="text" placeholder={t.nav.search + "..."} class="w-full outline-none text-lg p-3"/>
+        <p class="text-sm text-gray-500 mt-2">Tüm sitede arama (demo). Sonuç sayfasını birlikte tasarlayacağız.</p>
+      </div>
+    </div>
+  </div>
+
+  <main class="mx-auto max-w-5xl px-4">
+    <!-- Hero -->
+    <section class="py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
+      <div class="fade-in">
+        <h1 class="text-3xl md:text-5xl font-semibold tracking-tight mb-6">{t.hero.headline}</h1>
+        <p class="mb-4">{t.hero.p1}</p>
+        <p class="mb-4">{t.hero.p2}</p>
+        <p class="">{t.hero.p3}</p>
+        <div class="mt-8 flex gap-4">
+          <a href="#wd750" class="px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold">Teklif isteyin</a>
+          <a href="#details" class="px-2 py-3 text-blue-600 font-semibold">Detayları görün</a>
+        </div>
+      </div>
+      <picture class="fade-in">
+        <source srcset="/images/welldrives.webp" type="image/webp" />
+        <img src="/images/welldrives.jpg" alt="WellDrive ürün ailesi" class="w-full rounded-2xl shadow" loading="eager"/>
+      </picture>
+    </section>
+
+    <!-- WD750 -->
+    <section id="wd750" class="py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
+      <div class="order-1 md:order-1 fade-in">
+        <img src="/images/2in1-wd750.webp" alt="WD750 badge" class="h-16 mb-4"/>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">{t.wd750.title}</h2>
+        <p class="mb-4">{t.wd750.desc}</p>
+        <div class="mt-6 flex gap-4">
+          <a href="/teklif" class="px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold">Teklif isteyin</a>
+          <a href="/wd750" class="px-2 py-3 text-blue-600 font-semibold">Detayları görün</a>
+        </div>
+      </div>
+      <picture class="order-2 md:order-2 fade-in">
+        <source srcset="/images/product-wd750.webp" type="image/webp"/>
+        <img src="/images/product-wd750.png" alt="WD750" class="w-full max-w-sm mx-auto"/>
+      </picture>
+    </section>
+
+    <!-- WD770 -->
+    <section class="py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
+      <picture class="fade-in">
+        <source srcset="/images/product-wd770.webp" type="image/webp"/>
+        <img src="/images/product-wd770.png" alt="WD770" class="w-full max-w-md mx-auto"/>
+      </picture>
+      <div class="fade-in">
+        <img src="/images/2in1-wd770.webp" alt="WD770 badge" class="h-16 mb-4"/>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">{t.wd770.title}</h2>
+        <p class="mb-4">{t.wd770.desc}</p>
+        <div class="mt-6 flex gap-4">
+          <a href="/teklif" class="px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold">Teklif isteyin</a>
+          <a href="/wd770" class="px-2 py-3 text-blue-600 font-semibold">Detayları görün</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support -->
+    <section id="details" class="py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
+      <div class="fade-in">
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">{t.support.title}</h2>
+        <p class="mb-6">{t.support.desc}</p>
+        <div class="flex gap-4">
+          <a href="/destek" class="px-5 py-3 rounded-xl bg-blue-600 text-white font-semibold">{t.support.ctaSupport}</a>
+          <a href="/iletisim" class="px-2 py-3 text-blue-600 font-semibold">{t.support.ctaContact}</a>
+        </div>
+      </div>
+      <picture class="fade-in">
+        <source srcset="/images/well-support.webp" type="image/webp"/>
+        <img src="/images/well-support.jpg" alt="Destek ekibi" class="w-full rounded-2xl shadow"/>
+      </picture>
+    </section>
+  </main>
+
+  <Footer />
+</Base>

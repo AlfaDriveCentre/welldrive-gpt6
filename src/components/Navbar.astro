@@ -1,0 +1,39 @@
+---
+import { tr } from "../i18n/tr";
+const t = tr;
+---
+<header class="border-b bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-20">
+  <div class="mx-auto max-w-5xl px-4 flex items-center justify-between h-16">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/images/logo-welldrive.webp" alt="WellDrive logo" class="h-6 md:h-7" loading="eager" />
+      <span class="sr-only">WellDrive</span>
+    </a>
+    <nav class="hidden md:flex gap-8 text-sm text-brand">
+      <a href="/wd750" class="hover:underline">{t.nav.wd750}</a>
+      <a href="/wd770" class="hover:underline">{t.nav.wd770}</a>
+      <a href="/destek" class="hover:underline">{t.nav.support}</a>
+      <a href="/iletisim" class="hover:underline">{t.nav.contact}</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button id="searchBtn" class="text-brand" aria-label="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m1.6-4.4a6 6 0 11-12 0 6 6 0 0112 0z" />
+        </svg>
+      </button>
+      <details class="relative group">
+        <summary class="cursor-pointer text-sm text-brand">{t.nav.language}</summary>
+        <div class="absolute right-0 mt-2 w-40 bg-white shadow rounded-lg p-2 space-y-2">
+          <a class="flex items-center gap-2 text-sm text-brand" href="/tr">
+            <img src="/images/flag-tr.webp" alt="TR" class="h-4 w-4" /> Türkçe
+          </a>
+          <a class="flex items-center gap-2 text-sm text-brand opacity-50 pointer-events-none" href="/en" aria-disabled="true">
+            <img src="/images/flag-en.webp" alt="EN" class="h-4 w-4" /> English (yakında)
+          </a>
+          <a class="flex items-center gap-2 text-sm text-brand opacity-50 pointer-events-none" href="/ru" aria-disabled="true">
+            <img src="/images/flag-ru.webp" alt="RU" class="h-4 w-4" /> Русский (скоро)
+          </a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

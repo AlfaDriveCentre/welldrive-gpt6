@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "preserve",
+    "strict": true,
+    "baseUrl": "."
+  },
+  "exclude": [
+    "node_modules",
+    ".astro"
+  ]
+}
