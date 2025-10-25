@@ -1,29 +1,30 @@
 ---
-import "../styles/global.css";
-const { title = "WellDrive", description = "WellDrive demo", image = "/images/welldrives.webp" } = Astro.props;
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = 'WellDrive',
+  description = 'WellDrive – Endüstriyel sürücüler',
+} = Astro.props;
+
+// Global styles (safe import if present)
+try {
+  await import("../styles/global.css");
+} catch (e) {}
 ---
+<!DOCTYPE html>
 <html lang="tr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="preload" as="image" href="/images/welldrives.webp" />
-    <link rel="icon" href="/images/logo-welldrive.webp" />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
-  <body class="antialiased">
+  <body class="min-h-screen bg-white text-black antialiased">
     <slot />
-    <script>
-      const obs = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); } });
-      }, { threshold: 0.15 });
-      document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
-      const btn = document.getElementById('searchBtn');
-      const overlay = document.getElementById('searchOverlay');
-      if(btn && overlay){
-        btn.addEventListener('click', ()=> overlay.classList.remove('hidden'));
-        overlay.addEventListener('click', (e)=>{ if(e.target===overlay) overlay.classList.add('hidden'); });
-      }
-    </script>
   </body>
 </html>
